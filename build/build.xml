@@ -32,7 +32,7 @@
 		<echo message="Assembling Dav3x source..."/>
 		<mkdir dir="${obj3xtndir}" />
 		<exec dir="${obj3dir}" executable="${assemblerPath}/ca65">
-			<arg line="-t none -I . -l ${srcdir}/Shell/3/dav3x.asm -o ${obj3dir}/dav3x.o" />
+			<arg line="-t none -I . -l dav3x.lst -o ${obj3dir}/dav3x.o ${srcdir}/Shell/3/dav3x.asm" />
 		</exec>
 		<echo message="Linking Dav3x..."/>
 		<exec dir="${obj3dir}" executable="${assemblerPath}/ld65">
@@ -44,8 +44,8 @@
 		-->
 		<echo message="Assembling Davex source..."/>
 		<mkdir dir="${obj2xtndir}" />
-		<exec dir="${srcdir}" executable="${assemblerPath}/ca65">
-			<arg line="-t none -I . -l ${srcdir}/Shell/2/davex.asm -o ${obj2dir}/davex.o" />
+		<exec dir="${obj2dir}" executable="${assemblerPath}/ca65">
+			<arg line="-t none -I . -I ${srcdir} -l davex.lst -o ${obj2dir}/davex.o ${srcdir}/Shell/2/davex.asm" />
 		</exec>
 
 		<echo message="Linking Davex..."/>
