@@ -8518,7 +8518,7 @@ byte:	.res 1
 ; View a file
 ;
 IndexName:
-	pstr "indexed.help"
+	pstr "INDEXED.HELP"
 
 vf_fail:
 	jmp ProDOS_err
